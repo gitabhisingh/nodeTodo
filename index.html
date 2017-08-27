@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <title>Node JS Form</title>
+      <style>
+        .show{
+          display: block !important;
+        }
+        body {
+          font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-size: 13px;
+        }
+        #submitForm {
+          width: 600px;
+          border-right: 1px solid #CCC;
+          padding-right: 15px;
+          float: left;
+        }
+        input {
+          margin: 5px 0;
+          padding: 5px;
+          width: 250px;
+          display: block;
+        }
+        label {
+          display: block;
+          margin-top: 15px;
+        }
+        .errMsg {
+          display: none;
+          color: #F00;
+          font-size: 13px;
+          margin-top: 3px;
+        }
+        #submit {
+          margin-top: 10px;
+        }
+        #response {
+          float: left;
+          margin: 15px 0 0 25px;
+        }
+        #response table {
+          margin-top: 10px;
+          border-collapse: collapse;
+        }
+        #response td {
+          border: 1px solid black;
+          padding: 7px;
+        }
+      </style>
+  </head>
+
+  <body>
+    <form id="submitForm" action="http://127.0.0.1/form">
+      <label for="todo">To Do: </label>
+      <input type="text" name="todo" id="todo" placeholder="Enter the Task To do" />
+      <span class="errfName errMsg"></span>
+
+      <label for="isDone">Task Done? </label>
+      <input type="text" name="isDone" id="isDone" placeholder="True/False" />
+      <span class="errlName errMsg"></span>
+
+      <label for="hasAtt">Has Attachment? </label>
+      <input type="text" name="hasAtt" id="hasAtt" placeholder="True/False" />
+      <span class="erremail errMsg"></span>
+
+      <button type="submit" id="submit">Submit</button>
+    </form>
+    <div id="response"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="public/form.js"></script>
+  </body>
+
+</html>

@@ -34,10 +34,7 @@ module.exports = function(app) {
                 
                 res.send('Success');
             });
-        }
-        
-        else {
-           
+        } else {
            var newTodo = Todos({
                username: 'test',
                todo: req.body.todo,
@@ -48,18 +45,14 @@ module.exports = function(app) {
                if (err) throw err;
                res.send('Success');
            });
-            
         }
         
     });
     
     app.delete('/api/todo', function(req, res) {
-        
         Todos.findByIdAndRemove(req.body.id, function(err) {
             if (err) throw err;
             res.send('Success');
-        })
-        
-    });
-    
+        });        
+    });    
 }

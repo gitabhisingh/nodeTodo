@@ -103,10 +103,23 @@ $(document).ready(function(){
 				async: false,
 				success: function(data){
 					console.log(data);
-					//$('#submitForm input').val('');
+					$('#submitForm input').val('');
 				}
 			});
 			fetchRecords();
 		}
+	});
+	$('#delSubmit').click(function(){
+		$.ajax({
+			url: '/api/todo',
+			data: {
+				id: $('#delete').val()
+			},
+			type: 'DELETE',
+			success: function(data){
+				console.log(data);
+			}
+		});
+		fetchRecords();
 	});
 });
